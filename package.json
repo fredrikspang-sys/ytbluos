@@ -1,0 +1,15 @@
+{
+  "name": "ytbluos",
+  "version": "0.1.0",
+  "description": "Cast YouTube and YouTube Music from the phone app to a BluOS player (Bluesound, NAD).",
+  "type": "module",
+  "bin": { "ytbluos": "ytbluos.js" },
+  "scripts": { "start": "node ytbluos.js" },
+  "engines": { "node": ">=22" },
+  "license": "MIT",
+  "author": "Fredrik Spång",
+  "dependencies": {
+    "multicast-dns": "^7.2.5",
+    "yt-cast-receiver": "^2.1.0"
+  }
+}

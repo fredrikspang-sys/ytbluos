@@ -1,0 +1,16 @@
+# systemd user unit. Install: cp ytbluos.service ~/.config/systemd/user/ && systemctl --user enable --now ytbluos
+# (run "loginctl enable-linger $USER" to start at boot without logging in)
+[Unit]
+Description=ytbluos - cast YouTube Music to a BluOS player
+After=network-online.target
+
+[Service]
+WorkingDirectory=%h/ytbluos
+ExecStart=/usr/bin/env node ytbluos.js
+#Environment=YTBLUOS_PLAYER=192.0.2.10
+#Environment=YTBLUOS_COOKIES=%h/cookies.txt
+Restart=on-failure
+RestartSec=15
+
+[Install]
+WantedBy=default.target
